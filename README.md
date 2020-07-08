@@ -11,7 +11,7 @@ Useage is equally simple: Clone this repo and run scripts directly-- there's no 
 
 Easy system update script that even checks for mandatory reboot flags.
 
-##Script: tool-installer.sh
+## Script: tool-installer.sh
 
 Easy installer for a variety of useful apps: 
 

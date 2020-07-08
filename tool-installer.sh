@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+!/usr/bin/env bash
 
 # tool installer for ubuntu/debian systems
 # by rick pelletier (galiagante@gmail.com), sept 2017
@@ -13,7 +13,7 @@ CYAN=$(tput setaf 6; tput bold)
 NC=$(tput sgr0)
 
 
-apps=("curl" "wget" "tmux" "vim" "nano" "git" "htop" "nmap" "silversearcher-ag" "clamav")
+phase_two=("curl" "wget" "tmux" "vim" "nano" "git" "htop" "nmap" "silversearcher-ag" "clamav" "mariadb-client" "zip" "unzip" "p7zip-full" "p7zip-rar" "parallel")
 
 
 if [[ $(id -u) -ne 0 ]]
@@ -21,13 +21,23 @@ then
   echo
   echo "${RED}This script must run under root privileges${NC}"
   echo
+
   exit 1
 else
+  echo
+  echo "${CYAN}Installing GNU Toolchain${NC}"
+  echo
+
+  apt -y install build-essential autoconf automake libtool flex bison gdb make cmake
+
+  echo
+  echo "${CYAN}Installation process complete${NC}"
+
   echo
   echo "${CYAN}Installing supplemental apps${NC}"
   echo
 
-  for k in ${apps[@]}
+  for k in ${phase_two[@]}
   do
     echo -n "${GREEN}Checking for ${k}: "
     if dpkg --list | grep -i ${k} > /dev/null
@@ -42,6 +52,7 @@ else
   echo
   echo "${CYAN}Installation process complete${NC}"
 fi
+
 echo
 
 
