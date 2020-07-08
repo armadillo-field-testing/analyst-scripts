@@ -13,7 +13,24 @@ Easy system update script that even checks for mandatory reboot flags.
 
 ## Script: tool-installer.sh
 
-Easy installer for a variety of useful apps: 
+Easy installer for a variety of useful apps (if not already present):
+* GNU Toolchain (gcc, make, autoconf, libtool, flex, bison, etc.)
+* curl
+* wget
+* tmux
+* vim
+* nano
+* git
+* htop
+* nmap
+* silversearcher-ag
+* clamav
+* mariadb-client
+* zip
+* unzip
+* p7zip-full
+* p7zip-rar
+* parallel
 
 ## Script: pkg-cleanup.sh
 
