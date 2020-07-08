@@ -1,4 +1,4 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
 
 # tool installer for ubuntu/debian systems
 # by rick pelletier (galiagante@gmail.com), sept 2017
