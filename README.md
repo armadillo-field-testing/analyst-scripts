@@ -44,4 +44,4 @@ Easy package cleanup utility to remove/purge apps completely and recover disk sp
 
 **Rick Pelletier** - [Gannett Co., Inc. (USA Today Network)](https://www.usatoday.com/)
 
-test a PR
+test a PR2
