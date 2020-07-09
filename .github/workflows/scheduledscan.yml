@@ -25,8 +25,8 @@ jobs:
     - name: Add property values
       run: |
         touch sonar-project.properties
-        echo 'sonar.pullrequest.key=1' >> sonar-project.properties
-        echo 'sonar.branch.name=master' >> sonar-project.properties
+      #  echo 'sonar.pullrequest.key=1' >> sonar-project.properties
+      #  echo 'sonar.branch.name=master' >> sonar-project.properties
         echo 'sonar.projectKey=github-action-scheduled-armadillo-field-testing-analyst-scripts-42' >> sonar-project.properties
     # Run the sonarqube scan
     - name: SonarQube Scan
