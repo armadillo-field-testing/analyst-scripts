@@ -27,7 +27,7 @@ jobs:
         touch sonar-project.properties
         echo 'sonar.pullrequest.key=1' >> sonar-project.properties
         echo 'sonar.pullrequest.branch=master' >> sonar-project.properties
-        echo 'sonar.projectKey=github-action-scheduled-'${{github.repository}} >> sonar-project.properties
+        echo 'sonar.projectKey=github-action-scheduled-armadillo-field-testing-analyst-scripts' >> sonar-project.properties
     # Run the sonarqube scan
     - name: SonarQube Scan
       uses: armadillo-field-testing/sonarqube-action@master
