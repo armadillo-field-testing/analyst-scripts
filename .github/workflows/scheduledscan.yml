@@ -25,8 +25,8 @@ jobs:
     - name: Add property values
       run: |
         touch sonar-project.properties
-#        echo 'sonar.pullrequest.key='$PULL_NUMBER >> sonar-project.properties
-#        echo 'sonar.pullrequest.branch='$PR_BRANCH >> sonar-project.properties
+        echo 'sonar.pullrequest.key='$PULL_NUMBER >> sonar-project.properties
+        echo 'sonar.pullrequest.branch=master >> sonar-project.properties
         echo 'sonar.projectKey=github-action-scheduled-'${{github.repository}} >> sonar-project.properties
     # Run the sonarqube scan
     - name: SonarQube Scan
