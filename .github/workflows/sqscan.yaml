@@ -33,7 +33,6 @@ jobs:
     # Create the sonar-project.properties file with values
     - name: Add property values
       run: |
-        rm sonar-project.properties
         touch sonar-project.properties
         echo 'sonar.pullrequest.key='$PULL_NUMBER >> sonar-project.properties
         echo 'sonar.pullrequest.branch='$PR_BRANCH >> sonar-project.properties
