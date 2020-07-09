@@ -1,0 +1,36 @@
+# This is a workflow to complete a Sonarqube scan for a PR
+# Author: Beth Whyle
+
+name: Sonarqube Scheduled Scan
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  schedule:
+    - cron: "/15 * * * *"
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+      with:
+        ref: 'master'
+    - name: Add property values
+      run: |
+        touch sonar-project.properties
+#        echo 'sonar.pullrequest.key='$PULL_NUMBER >> sonar-project.properties
+#        echo 'sonar.pullrequest.branch='$PR_BRANCH >> sonar-project.properties
+        echo 'sonar.projectKey=github-action-scheduled-'${{github.repository}} >> sonar-project.properties
+    # Run the sonarqube scan
+    - name: SonarQube Scan
+      uses: armadillo-field-testing/sonarqube-action@master
+      env:
+        SONAR_HOST_URL: ${{secrets.SONAR_HOST_URL}}
+        SONAR_LOGIN: ${{secrets.SONAR_TOKEN}}
