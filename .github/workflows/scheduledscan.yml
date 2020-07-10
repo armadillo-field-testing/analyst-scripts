@@ -22,7 +22,7 @@ jobs:
     - uses: actions/checkout@master
       with:
         fetch-depth: 0
-    - run: git fetch --prune --unshallow
+    - run: git fetch --prune
     - name: Add property values
       run: |
         touch sonar-project.properties
